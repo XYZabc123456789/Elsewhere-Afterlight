@@ -1,0 +1,14 @@
+[target.x86_64-pc-windows-msvc]
+linker = "rust-lld.exe"
+rustflags = [
+  # (Nightly) Make the current crate share its generic instantiations
+  "-Zshare-generics=y",
+  "-C", 
+  "target-cpu=x86-64-v3"
+]
+
+[profile.dev]
+codegen-backend = "cranelift"
+
+[unstable]
+codegen-backend = true

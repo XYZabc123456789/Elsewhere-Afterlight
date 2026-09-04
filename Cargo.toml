@@ -1,0 +1,19 @@
+[package]
+name = "elsewhere_afterlight"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+crossbeam = "0.8.4"
+glam = "0.33.6"
+pollster = "1.0.1"
+wgpu = "30.0.1"
+winit = "0.30.13"
+
+[profile.release]
+codegen-units = 1
+lto = true
+
+[[bin]]
+name = "elsewhere-afterlight"
+path = "src/main.rs"
